@@ -2,6 +2,8 @@
 
 AI assistant that delivers referenced, clinically aware answers for clinicians and researchers. It pairs Gemini with retrieval over PubMed-derived content so users can see citations, study details, and configurable evidence filters.
 
+Authors: Rohan Krishnamurthi, Krittaphas Chaisutyakorn, Brianna Grissom, Matlin Gilman
+
 ## What’s inside
 - `.github/workflows`: GitHub Actions CI/CD pipelines, ML workflow.
 - `notebooks`, `docs`, `data`: Exploratory work, notes, and seeds.
