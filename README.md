@@ -4,6 +4,8 @@ AI assistant that delivers referenced, clinically aware answers for clinicians a
 
 Authors: Rohan Krishnamurthi, Krittaphas Chaisutyakorn, Brianna Grissom, Matlin Gilman
 
+Blog post on Medium: https://medium.com/institute-for-applied-computational-science/the-consult-blog-post-apcomp-215-bc262d783c46 
+
 ## What’s inside
 - `.github/workflows`: GitHub Actions CI/CD pipelines, ML workflow.
 - `notebooks`, `docs`, `data`: Exploratory work, notes, and seeds.
