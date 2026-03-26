@@ -12,7 +12,7 @@ Clinicians and medical researchers need reliable, up-to-date evidence, yet thous
 ## Our Solution
 We developed The Consult, an AI web app designed to give clinicians and researchers clearer, more customizable access to the evidence behind medical information. AI-generated answers include linked sources and labels indicating each study's conflict of interest status, impact (such as publication in a top journal or high citation count), and recency (published within the past year or the past five years). Users can filter results based on any of these attributes - including COI status - to focus on the studies that best meet their needs. The Consult also offers two answer modes - Clinical Practice and Research - so responses are tailored to the context of the question. Overall, The Consult provides a more transparent and customizable way for clinicians and researchers to access, synthesize, and apply medical evidence.
 
-## How We Built The Consult
+## Application Development
 ### Data Pipeline
 - Collecting articles: We used the PubMed API to gather metadata and text from medical research articles.
 - Labeling studies: A classification model assigned labels for conflict of interest (COI), impact (e.g. top journal, highly cited), and recency (published within 1 year or 5 years). The processed data was stored in Google Cloud Storage.
