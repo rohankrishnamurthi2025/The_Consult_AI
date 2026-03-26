@@ -14,18 +14,18 @@ We developed The Consult, an AI web app designed to give clinicians and research
 
 ## How We Built The Consult
 ### Data Pipeline
-Collecting articles: We used the PubMed API to gather metadata and text from medical research articles.
-Labeling studies: A classification model assigned labels for conflict of interest (COI), impact (e.g. top journal, highly cited), and recency (published within 1 year or 5 years). The processed data was stored in Google Cloud Storage.
-Preparing for search: Another pipeline split articles into smaller chunks, created text embeddings, and stored them in a ChromaDB vector database.
-RAG workflow: We built a Retrieval-Augmented Generation (RAG) system that allows the AI to retrieve relevant article chunks when answering user questions.
-Model fine-tuning: We fine-tuned large language models on labeled PubMed data to improve performance for both clinical and research queries.
+- Collecting articles: We used the PubMed API to gather metadata and text from medical research articles.
+- Labeling studies: A classification model assigned labels for conflict of interest (COI), impact (e.g. top journal, highly cited), and recency (published within 1 year or 5 years). The processed data was stored in Google Cloud Storage.
+- Preparing for search: Another pipeline split articles into smaller chunks, created text embeddings, and stored them in a ChromaDB vector database.
+- RAG workflow: We built a Retrieval-Augmented Generation (RAG) system that allows the AI to retrieve relevant article chunks when answering user questions.
+- Model fine-tuning: We fine-tuned large language models on labeled PubMed data to improve performance for both clinical and research queries.
 
 ### Application Layer
-Backend: A FastAPI backend receives user questions and interfaces with the RAG system to produce answers.
-Frontend: The interface was built as a Lovable AI web app using React and Vite.
-Quality and testing: GitHub Actions handles automated testing and linting to maintain code quality.
-Deployment: The application runs on a Kubernetes cluster on Google Kubernetes Engine.
-Continuous updates: A daily ingestion and processing workflow brings in newly published PubMed articles so The Consult remains up to date.
+- Backend: A FastAPI backend receives user questions and interfaces with the RAG system to produce answers.
+- Frontend: The interface was built as a Lovable AI web app using React and Vite.
+- Quality and testing: GitHub Actions handles automated testing and linting to maintain code quality.
+- Deployment: The application runs on a Kubernetes cluster on Google Kubernetes Engine.
+- Continuous updates: A daily ingestion and processing workflow brings in newly published PubMed articles so The Consult remains up to date.
 
 
 ## What’s inside
