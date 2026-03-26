@@ -6,6 +6,28 @@ Authors: Rohan Krishnamurthi, Krittaphas Chaisutyakorn, Brianna Grissom, Matlin 
 
 Blog post on Medium: https://medium.com/institute-for-applied-computational-science/the-consult-blog-post-apcomp-215-bc262d783c46 
 
+## Background
+Clinicians and medical researchers need reliable, up-to-date evidence, yet thousands of new studies appear each day, making it difficult to stay current and avoid missing important insights. Existing AI tools like OpenEvidence offer fast, evidence-based answers, but they lack transparency around conflicts of interest (COI) - a key source of potential bias users may want to consider - and they do not allow users to filter results based on COI status. They also give the same type of answer whether the user is a clinician or a researcher, even though their information needs differ. As a result, there remains a need for medical AI tools that offer clearer evidence labeling, flexible filtering options, and tailored support for different use cases.
+
+## Our Solution
+We developed The Consult, an AI web app designed to give clinicians and researchers clearer, more customizable access to the evidence behind medical information. AI-generated answers include linked sources and labels indicating each study's conflict of interest status, impact (such as publication in a top journal or high citation count), and recency (published within the past year or the past five years). Users can filter results based on any of these attributes - including COI status - to focus on the studies that best meet their needs. The Consult also offers two answer modes - Clinical Practice and Research - so responses are tailored to the context of the question. Overall, The Consult provides a more transparent and customizable way for clinicians and researchers to access, synthesize, and apply medical evidence.
+
+## How We Built The Consult
+### Data Pipeline
+Collecting articles: We used the PubMed API to gather metadata and text from medical research articles.
+Labeling studies: A classification model assigned labels for conflict of interest (COI), impact (e.g. top journal, highly cited), and recency (published within 1 year or 5 years). The processed data was stored in Google Cloud Storage.
+Preparing for search: Another pipeline split articles into smaller chunks, created text embeddings, and stored them in a ChromaDB vector database.
+RAG workflow: We built a Retrieval-Augmented Generation (RAG) system that allows the AI to retrieve relevant article chunks when answering user questions.
+Model fine-tuning: We fine-tuned large language models on labeled PubMed data to improve performance for both clinical and research queries.
+
+### Application Layer
+Backend: A FastAPI backend receives user questions and interfaces with the RAG system to produce answers.
+Frontend: The interface was built as a Lovable AI web app using React and Vite.
+Quality and testing: GitHub Actions handles automated testing and linting to maintain code quality.
+Deployment: The application runs on a Kubernetes cluster on Google Kubernetes Engine.
+Continuous updates: A daily ingestion and processing workflow brings in newly published PubMed articles so The Consult remains up to date.
+
+
 ## What’s inside
 - `.github/workflows`: GitHub Actions CI/CD pipelines, ML workflow.
 - `notebooks`, `docs`, `data`: Exploratory work, notes, and seeds.
